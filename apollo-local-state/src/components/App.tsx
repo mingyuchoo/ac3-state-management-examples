@@ -1,12 +1,12 @@
-import React from 'react'
-import Header from '../containers/Header'
-import MainSection from '../containers/MainSection'
+import React from "react";
+import HeaderContainer from "../containers/HeaderContainer";
+import MainContainer from "../containers/MainContainer";
 
-const App = () => (
+const App: React.FC = (): React.ReactElement => (
   <div>
-    <Header />
-    <MainSection />
+    <HeaderContainer />
+    <MainContainer />
   </div>
-)
+);
 
-export default App
+export default App;

@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test --env=node",
-    "generate": "apollo client:codegen --target typescript --excludes src/operations/queries/getVisibilityFilter.tsx"
+    "generate": "npx apollo client:codegen --target typescript --excludes src/operations/queries/getVisibilityFilter.tsx"
   },
   "browserslist": [
     ">0.2%",

@@ -1,19 +1,18 @@
-
 import { ReactiveVar } from "@apollo/client";
 
 // This is how to create a mock reactive variable.
 // It's a good idea to do this because then we can test our
 // interaction logic.
 
-export function createMockReactiveVar<T> (defaultValue?: T): ReactiveVar<T> {
+export function createMockReactiveVar<T>(defaultValue?: T) {
   let currentValue: T | undefined = defaultValue;
 
-  return function mockReactiveVar (
-    newValue?: T
-  ) : T {
-    if (newValue) {
-      currentValue = newValue;
-    }
-    return currentValue as T;
-  }
+  // return function mockReactiveVar (
+  //   newValue?: T
+  // ) : T {
+  //   if (newValue) {
+  //     currentValue = newValue;
+  //   }
+  //   return currentValue as T;
+  // }
 }

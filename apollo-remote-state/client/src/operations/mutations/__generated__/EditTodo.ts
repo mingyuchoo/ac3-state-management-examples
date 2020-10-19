@@ -23,7 +23,9 @@ export interface EditTodo_editTodo_error_TodoValidationError {
   message: string;
 }
 
-export type EditTodo_editTodo_error = EditTodo_editTodo_error_TodoNotFoundError | EditTodo_editTodo_error_TodoValidationError;
+export type EditTodo_editTodo_error =
+  | EditTodo_editTodo_error_TodoNotFoundError
+  | EditTodo_editTodo_error_TodoValidationError;
 
 export interface EditTodo_editTodo {
   __typename: "EditTodoResult";

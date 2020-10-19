@@ -1,14 +1,13 @@
-
 import { gql, useMutation } from "@apollo/client";
-import * as CompleteTodoTypes from './__generated__/CompleteTodo'
+import * as CompleteTodoTypes from "./__generated__/CompleteTodo";
 
 export const COMPLETE_TODO = gql`
-  mutation CompleteTodo ($id: Int!) {
-    completeTodo (id: $id) {
+  mutation CompleteTodo($id: Int!) {
+    completeTodo(id: $id) {
       success
       todo {
         id
-        text 
+        text
         completed
       }
       error {
@@ -21,15 +20,13 @@ export const COMPLETE_TODO = gql`
       }
     }
   }
-`
+`;
 
-export function useCompleteTodo () {
+export function useCompleteTodo() {
   const [mutate, { data, error }] = useMutation<
-    CompleteTodoTypes.CompleteTodo, 
+    CompleteTodoTypes.CompleteTodo,
     CompleteTodoTypes.CompleteTodoVariables
-  >(
-    COMPLETE_TODO
-  )
+  >(COMPLETE_TODO);
 
   return { mutate, data, error };
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Footer from './Footer'
-import VisibleTodoList from '../containers/VisibleTodoList'
-import { VisiblityFilter } from '../models/VisibilityFilter';
+import React from "react";
+import PropTypes from "prop-types";
+import Footer from "./Footer";
+import TodoListContainer from "../containers/TodoListContainer";
+import { VisiblityFilter } from "../models/VisibilityFilter";
 
 interface MainSectionProps {
   activeVisibilityFilter: VisiblityFilter;
@@ -11,31 +11,21 @@ interface MainSectionProps {
   actions: any;
 }
 
-/** 
+/**
  * This is a view component. It doesn't define anything that
  * is responsible for querying or mutating, it just relies
  * on it from the upper layer component (namely, actions)
-*/
+ */
 
-const MainSection = ({
-  activeVisibilityFilter,
-  todosCount,
-  completedCount,
-  actions,
-}: MainSectionProps) => (
+const MainSection = ({ activeVisibilityFilter, todosCount, completedCount, actions }: MainSectionProps) => (
   <section className="main">
     {!!todosCount && (
       <span>
-        <input
-          className="toggle-all"
-          type="checkbox"
-          checked={completedCount === todosCount}
-          readOnly
-        />
+        <input className="toggle-all" type="checkbox" checked={completedCount === todosCount} readOnly />
         <label onClick={actions.completeAllTodos} />
       </span>
     )}
-    <VisibleTodoList />
+    <TodoListContainer />
     {!!todosCount && (
       <Footer
         activeVisibilityFilter={activeVisibilityFilter}
@@ -51,7 +41,7 @@ const MainSection = ({
 MainSection.propTypes = {
   todosCount: PropTypes.number.isRequired,
   completedCount: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired
-}
+  actions: PropTypes.object.isRequired,
+};
 
 export default MainSection;

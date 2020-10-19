@@ -1,4 +1,3 @@
-
 import { InMemoryCache, ReactiveVar, makeVar } from "@apollo/client";
 import { Todos } from "./models/Todos";
 import { VisibilityFilter, VisibilityFilters } from "./models/VisibilityFilter";
@@ -8,18 +7,18 @@ export const cache: InMemoryCache = new InMemoryCache({
     Query: {
       fields: {
         todos: {
-          read () {
+          read() {
             return todosVar();
-          }
+          },
         },
         visibilityFilter: {
-          read () {
+          read() {
             return visibilityFilterVar();
           },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 });
 
 /**
@@ -30,14 +29,9 @@ const todosInitialValue: Todos = [
   {
     id: 0,
     completed: false,
-    text: "Use Apollo Client 3"
-  }
-]
+    text: "Use Apollo Client 3",
+  },
+];
 
-export const todosVar: ReactiveVar<Todos> = makeVar<Todos>(
-  todosInitialValue
-);
-
-export const visibilityFilterVar = makeVar<VisibilityFilter>(
-  VisibilityFilters.SHOW_ALL
-)
+export const todosVar: ReactiveVar<Todos> = makeVar<Todos>(todosInitialValue);
+export const visibilityFilterVar: ReactiveVar<VisibilityFilter> = makeVar<VisibilityFilter>(VisibilityFilters.SHOW_ALL);

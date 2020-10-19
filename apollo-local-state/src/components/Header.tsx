@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import TodoTextInput from './TodoTextInput'
+import React from "react";
+import PropTypes from "prop-types";
+import TodoTextInput from "./TodoTextInput";
 
 interface HeaderProps {
   addTodo: (text: string) => void;
 }
 
-const Header = ({ addTodo }: HeaderProps) => (
+const Header: React.FC<HeaderProps> = ({ addTodo }: HeaderProps): React.ReactElement => (
   <header className="header">
     <h1>todos</h1>
     <TodoTextInput
@@ -22,7 +22,7 @@ const Header = ({ addTodo }: HeaderProps) => (
 );
 
 Header.propTypes = {
-  addTodo: PropTypes.func.isRequired
-}
+  addTodo: PropTypes.func.isRequired,
+};
 
-export default Header
+export default Header;

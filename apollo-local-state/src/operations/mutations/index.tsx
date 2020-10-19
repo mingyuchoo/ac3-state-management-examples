@@ -1,19 +1,18 @@
-
-import createAddTodo from "./addTodo/addTodo";
-import createClearCompletedTodos from "./clearCompletedTodos/clearCompletedTodos";
-import createCompleteTodo from "./completeTodo/completeTodo";
-import createCompleteAllTodos from "./completeAllTodos/completeAllTodos";
+import addTodo from "./addTodo/addTodo";
+import clearCompletedTodos from "./clearCompletedTodos/clearCompletedTodos";
+import completeTodo from "./completeTodo/completeTodo";
+import completeAllTodos from "./completeAllTodos/completeAllTodos";
 import createDeleteTodo from "./deleteTodo/deleteTodo";
-import createEditTodo from "./editTodo/editTodo";
-import createSetVisibilityFilter from "./setVisibilityFilter/setVisibilityFilter";
+import editTodo from "./editTodo/editTodo";
+import setVisibilityFilter from "./setVisibilityFilter/setVisibilityFilter";
 import { todosVar, visibilityFilterVar } from "../../cache";
 
 export const todoMutations = {
-  addTodo: createAddTodo(todosVar),
-  clearCompletedTodos: createClearCompletedTodos(todosVar),
-  completeTodo: createCompleteTodo(todosVar),
-  completeAllTodos: createCompleteAllTodos(todosVar),
+  addTodo: addTodo(todosVar),
+  clearCompletedTodos: clearCompletedTodos(todosVar),
+  completeTodo: completeTodo(todosVar),
+  completeAllTodos: completeAllTodos(todosVar),
   deleteTodo: createDeleteTodo(todosVar),
-  editTodo: createEditTodo(todosVar),
-  setVisibilityFilter: createSetVisibilityFilter(visibilityFilterVar)
-}
+  editTodo: editTodo(todosVar),
+  setVisibilityFilter: setVisibilityFilter(visibilityFilterVar),
+};

@@ -1,12 +1,12 @@
-import React from 'react'
-import Header from '../containers/Header'
-import MainSection from '../containers/MainSection'
+import React from "react";
+import HeaderContainer from "../containers/HeaderContainer";
+import MainSectionContainer from "../containers/MainSectionContainer";
 
 const App = () => (
   <div>
-    <Header />
-    <MainSection />
+    <HeaderContainer />
+    <MainSectionContainer />
   </div>
-)
+);
 
-export default App
+export default App;
